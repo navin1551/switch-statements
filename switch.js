@@ -9,21 +9,21 @@ const timeAdder2 = (value1, label1, value2, label2) => {
     return false;
   }
 
-  switch (value1) {
-    case 1 &&
-      (label1 === "second" ||
-        label1 === "minute" ||
-        label1 === "hour" ||
-        label1 === "day"):
+  switch ((value1, label1)) {
+    case value1 === 1:
+    case label1 === "second" ||
+      label1 === "minute" ||
+      label1 === "hour" ||
+      label1 === "day":
       count += value1;
   }
 
-  switch (value2) {
-    case 1 &&
-      (label2 === "second" ||
-        label2 === "minute" ||
-        label2 === "hour" ||
-        label2 === "day"):
+  switch ((value2, label2)) {
+    case value2 === 1:
+    case label2 === "second" ||
+      label2 === "minute" ||
+      label2 === "hour" ||
+      label2 === "day":
       count += value2;
   }
 
@@ -55,4 +55,4 @@ const timeAdder2 = (value1, label1, value2, label2) => {
   return results;
 };
 
-console.log(timeAdder2(11, "days", 1, "minute"));
+console.log(timeAdder2(11, "days", 1, "second"));
